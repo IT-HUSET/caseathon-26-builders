@@ -10,6 +10,8 @@ Builders warm-up for the Caseathon. Three blocks. You practise the loop you will
 
 **What you need**: `uv run check.py` green, `claude` started in this directory, `/model opus` set. Work alone; pairing is fine if you prefer, one laptop per pair.
 
+**Fresh session** below means the conversation is gone and only the files remain. Either `/clear` inside the running `claude`, or **Ctrl+D** and start `claude` again. Both work.
+
 The playbook chapters behind each block are listed at the end.
 
 ---
@@ -24,7 +26,7 @@ The playbook chapters behind each block are listed at the end.
 | `docs/PRD.md` | What we are building and for whom. One page. |
 | `docs/DECISIONS.md` | Three decisions the agent must respect. |
 | `docs/FRICTION.md` | Where you write one line every time something rubs. |
-| `AGENTS.md` | The rules file. The agent reads it in every session. `CLAUDE.md` just imports it. |
+| `CLAUDE.md` / `AGENTS.md` | The rules file (agent dependent). The agent reads it in every session. Note: `CLAUDE.md` just imports AGENTS.md. |
 
 First run the tests, then the app. Add two notes in the browser. Look at row 1 in `PLAN.md` and check that the scenario matches what you just did.
 
@@ -44,7 +46,7 @@ Goal: rows 2 and 3 in `PLAN.md` have a scenario and a control that a stranger co
 2. Ask for the plan, not the code:
 
    ```
-   Read AGENTS.md, docs/PRD.md, docs/DECISIONS.md and PLAN.md.
+   Read docs/PRD.md, docs/DECISIONS.md and PLAN.md.
    For plan rows 2 (search) and 3 (archive): propose a scenario and a control
    for each, in the same style as row 1. Then list, per row, which files
    change and the smallest test that proves the row. Do not write code.
@@ -55,12 +57,12 @@ Goal: rows 2 and 3 in `PLAN.md` have a scenario and a control that a stranger co
 
 4. Edit `PLAN.md` yourself. Fill in scenario and control for rows 2 and 3 in your own words. A control is a test name or a click sequence, never "works as expected". Keep each cell to two sentences.
 
-5. Commit the plan and close the session. Do not carry it into the build.
+5. Commit the plan and drop the session. Do not carry it into the build.
 
    ```bash
    git add PLAN.md && git commit -m "Plan rows 2 and 3"
    ```
-   Then **Ctrl+D**.
+   Then `/clear` or **Ctrl+D**.
 
 Checkpoint: could someone who was not in this session build row 2 from `PLAN.md` alone, without asking you anything? If not, fix the row.
 
@@ -70,13 +72,13 @@ Checkpoint: could someone who was not in this session build row 2 from `PLAN.md`
 
 Goal: row 2 is `done`, by you, not by the agent's say-so.
 
-1. Fresh session: `claude` in the same directory. Nothing from block A is in this context except what is in the files. That is the point.
+1. Fresh session (`/clear`, or **Ctrl+D** and `claude` again). Nothing from block A is in this context except what is in the files. That is the point.
 
 2. Set the row to `building` in `PLAN.md`. Give the agent the row and only the row:
 
    ```
    Implement plan row 2 from PLAN.md. Scenario: <paste your scenario>.
-   Control: <paste your control>. Follow AGENTS.md and docs/DECISIONS.md.
+   Control: <paste your control>. Follow docs/DECISIONS.md.
    Write the test first, show me it failing, then make it pass. Stop when
    the control passes and report the files changed and the test output.
    ```
@@ -92,7 +94,7 @@ Goal: row 2 is `done`, by you, not by the agent's say-so.
 
    "The agent says the tests pass" is not the control. Your terminal is.
 
-5. Green and the click matches the scenario: set row 2 to `done`, commit, **Ctrl+D**. Not green: describe the symptom to the agent, not the fix. Two attempts, then write a friction line and move on.
+5. Green and the click matches the scenario: set row 2 to `done`, commit, fresh session. Not green: describe the symptom to the agent, not the fix. Two attempts, then write a friction line and move on.
 
    ```bash
    git add -A && git commit -m "Increment 2: search"
@@ -106,7 +108,7 @@ Checkpoint: `git log --oneline` shows two commits. `docs/FRICTION.md` has at lea
 
 Goal: a fresh session finds one thing you missed, and row 3 gets built from the repo alone.
 
-1. Review in a fresh session. New `claude`, then:
+1. Review in a fresh session (`/clear` or new `claude`), then:
 
    ```
    Compare the code with docs/PRD.md, docs/DECISIONS.md and PLAN.md.
@@ -114,7 +116,7 @@ Goal: a fresh session finds one thing you missed, and row 3 gets built from the 
    control does not actually prove the scenario. Findings only, no fixes.
    ```
 
-   Write the findings into `docs/FRICTION.md` under *Review findings*. Fix the most important one if it takes under five minutes; otherwise note it. **Ctrl+D**.
+   Write the findings into `docs/FRICTION.md` under *Review findings*. Fix the most important one if it takes under five minutes; otherwise note it. Fresh session.
 
 2. Hand over to a stranger. Build row 3 in a fresh session, same prompt shape as block B with row 3 pasted in, but with one rule: the only thing you may type is the row. No explaining, no correcting from memory of blocks A and B. If the agent needs something that is not in `PLAN.md`, `AGENTS.md` or `docs/`, that is a friction line, and you add the missing sentence to the file before re-sending. Run the control.
 
@@ -128,7 +130,7 @@ Checkpoint: row 3 `done` or `building` with a friction line saying why.
 
 ## Wrap
 
-Back on your own laptop, one last session:
+Back on your own laptop, one last fresh session:
 
 ```
 Looking at PLAN.md and git log: what was missing from my plan rows that made
@@ -143,7 +145,7 @@ Copy the answer's best line under *Next time, automate* in `docs/FRICTION.md`. T
 
 - **The agent rewrote row 1 or a test.** `Esc Esc` opens rewind; restore code and conversation to before the change. Then add the missing sentence to `AGENTS.md`.
 - **The agent asks for a decision the plan does not cover.** That is a planning defect, not an agent defect. Decide, write it in `docs/DECISIONS.md` or the plan row, and re-send.
-- **Session feels confused or slow.** `/context` shows what is loaded. If the session has run three follow-ups, close it and start fresh with the row.
+- **Session feels confused or slow.** `/context` shows what is loaded. If the session has run three follow-ups, `/clear` and re-send the row.
 - **Wrong model.** `/model` shows which; Pro plans default to Sonnet 5. `/model opus`.
 
 ## Where this comes from

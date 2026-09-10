@@ -1,6 +1,6 @@
 # Decisions
 
-Each decision is one paragraph: the situation, what we chose, what it costs. The agent reads this file on every session (see `AGENTS.md`).
+Each decision is one paragraph: the situation, what we chose, what it costs.
 
 ## D1 · One file, no framework layers
 
