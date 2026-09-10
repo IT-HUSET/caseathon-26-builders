@@ -4,7 +4,7 @@ Each decision is one paragraph: the situation, what we chose, what it costs. The
 
 ## D1 · One file, no framework layers
 
-A warm-up with 90 minutes of hands-on time cannot afford a package layout. `app.py` holds routes, data access and startup; `templates/index.html` holds the one page. Cost: the file will get long by increment 3, and a real project would split it. We accept that for today.
+A warm-up cannot afford a package layout. `app.py` holds routes, data access and startup; `templates/index.html` holds the one page. Cost: the file will get long by increment 3, and a real project would split it. We accept that for today.
 
 ## D2 · SQLite via the standard library, schema created on startup
 

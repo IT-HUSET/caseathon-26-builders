@@ -1,6 +1,6 @@
 # Plan, then build
 
-Builders warm-up for the Caseathon. Ninety minutes, three hands-on blocks between short talks. You practise the exact loop you will run in the afternoon: write the plan row, open a fresh session, let the agent build, run the control yourself, review in another fresh session.
+Builders warm-up for the Caseathon. Three blocks. You practise the loop you will run when building the prototype: write the plan row, open a fresh session, let the agent build, run the control yourself, review in another fresh session.
 
 **What you learn**
 
@@ -10,7 +10,7 @@ Builders warm-up for the Caseathon. Ninety minutes, three hands-on blocks betwee
 
 **What you need**: `./check.sh` green, `claude` started in this directory, `/model opus` set. Work alone; pairing is fine if you prefer, one laptop per pair.
 
-The playbook chapters behind each block are listed at the end. The five habits on the Caseathon page are the same five you drill here.
+The playbook chapters behind each block are listed at the end.
 
 ---
 
@@ -35,7 +35,7 @@ uv run uvicorn app:app --reload     # http://127.0.0.1:8000
 
 ---
 
-## Block A · Plan (12 min)
+## Block A · Plan
 
 Goal: rows 2 and 3 in `PLAN.md` have a scenario and a control that a stranger could run.
 
@@ -66,7 +66,7 @@ Checkpoint: could someone who was not in this session build row 2 from `PLAN.md`
 
 ---
 
-## Block B · Build increment 2 (15 min)
+## Block B · Build increment 2
 
 Goal: row 2 is `done`, by you, not by the agent's say-so.
 
@@ -102,7 +102,7 @@ Checkpoint: `git log --oneline` shows two commits. `docs/FRICTION.md` has at lea
 
 ---
 
-## Block C · Review, then hand over (12 min)
+## Block C · Review, then hand over
 
 Goal: a fresh session finds one thing you missed, and row 3 gets built from the repo alone.
 
@@ -118,7 +118,7 @@ Goal: a fresh session finds one thing you missed, and row 3 gets built from the 
 
 2. Hand over to a stranger. Build row 3 in a fresh session, same prompt shape as block B with row 3 pasted in, but with one rule: the only thing you may type is the row. No explaining, no correcting from memory of blocks A and B. If the agent needs something that is not in `PLAN.md`, `AGENTS.md` or `docs/`, that is a friction line, and you add the missing sentence to the file before re-sending. Run the control.
 
-   This is the afternoon's 13:10 in miniature: at the Caseathon the person building increment two was not in the room for the skeleton, and gets only what is in the repo. Here the stranger is the fresh session.
+   This is the Caseathon build in miniature: the person building the next increment was not in the room for the previous one, and gets only what is in the repo. Here the stranger is the fresh session.
 
    *Working in a pair?* Swap laptops instead and build each other's row 3 from the repo alone, no questions allowed. Same rule, real stranger.
 
@@ -126,7 +126,7 @@ Checkpoint: row 3 `done` or `building` with a friction line saying why.
 
 ---
 
-## Wrap (5 min)
+## Wrap
 
 Back on your own laptop, one last session:
 
@@ -135,7 +135,7 @@ Looking at PLAN.md and git log: what was missing from my plan rows that made
 the build harder or needed a follow-up? Answer in five lines.
 ```
 
-Copy the answer's best line under *Next time, automate* in `docs/FRICTION.md`. Then `/cost`, and write the number next to it. That is habit five.
+Copy the answer's best line under *Next time, automate* in `docs/FRICTION.md`. Then `/cost`, and write the number next to it.
 
 ---
 
