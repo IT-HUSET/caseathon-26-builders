@@ -1,11 +1,24 @@
 {
   "permissions": {
     "allow": [
-      "Bash(uv run pytest*)",
-      "Bash(uv run uvicorn*)",
-      "Bash(git status*)",
-      "Bash(git diff*)",
-      "Bash(git log*)"
+      "Bash(uv run pytest *)",
+      "Bash(uv run check.py)",
+      "Bash(uv sync *)"
+    ],
+    "ask": [
+      "Bash(git add *)",
+      "Bash(git commit *)"
+    ],
+    "deny": [
+      "Bash(git push *)",
+      "Bash(git reset *)",
+      "Bash(rm -rf *)",
+      "Bash(uv add *)",
+      "Bash(uv remove *)",
+      "Bash(uv pip *)",
+      "Bash(pip install *)",
+      "Edit(uv.lock)",
+      "Read(.env)"
     ]
   }
 }
