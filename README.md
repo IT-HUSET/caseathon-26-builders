@@ -22,6 +22,8 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 irm https://claude.ai/install.ps1 | iex                                             # Claude Code
 ```
 
+Prefer winget? `winget install --id=astral-sh.uv -e` and `winget install Anthropic.ClaudeCode` do the same.
+
 Open a new terminal afterwards so both are on your PATH. [Git for Windows](https://git-scm.com/downloads/win) is recommended on native Windows; it gives Claude Code a Bash tool.
 
 Then, in any terminal:
@@ -50,7 +52,11 @@ Docker Desktop running, VS Code with the *Dev Containers* extension. Clone the r
 claude            # first start opens a browser login
 ```
 
-Inside Claude Code, type `/model opus`, then one prompt as a smoke test: *What does this app do? Answer in three lines.*
+Pick **Claude account with subscription**, not API key, and finish the login in the browser. Already inside a session? `/login` does the same.
+
+In Codespaces or a dev container the browser handoff sometimes fails the first time. Run `/login` again: the second attempt shows a code you paste into the terminal.
+
+Then type `/model opus`, and send one prompt as a smoke test: *What does this app do? Answer in three lines.*
 
 If a line fails and you cannot fix it, use Option B.
 
