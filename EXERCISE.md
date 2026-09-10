@@ -8,7 +8,7 @@ Builders warm-up for the Caseathon. Three blocks. You practise the loop you will
 - How to hand the agent one increment at a time and check it with something executable.
 - What a review in fresh context finds that you did not.
 
-**What you need**: `./check.sh` green, `claude` started in this directory, `/model opus` set. Work alone; pairing is fine if you prefer, one laptop per pair.
+**What you need**: `uv run check.py` green, `claude` started in this directory, `/model opus` set. Work alone; pairing is fine if you prefer, one laptop per pair.
 
 The playbook chapters behind each block are listed at the end.
 
