@@ -36,13 +36,13 @@ uv run check.py
 
 ### Option B: GitHub Codespaces
 
-Nothing to install. On the repo page, **Code → Codespaces → Create codespace on main**. The first build takes a few minutes and installs `uv` and Claude Code. Open the terminal and run `uv run check.py`.
+Nothing to install. On the repo page, **Code → Codespaces → Create codespace on main**. The first build takes a few minutes and installs `uv`, Claude Code, and the Codex and Copilot CLIs. Open the terminal and run `uv run check.py`.
 
 Want to keep your work afterwards? Fork the repo first and create the codespace on your fork.
 
 ### Option C: Dev container on your machine
 
-Docker Desktop running, VS Code with the *Dev Containers* extension. Clone the repo, open the folder in VS Code, accept **Reopen in Container**. The container installs `uv` and Claude Code. Then `uv run check.py` in the VS Code terminal.
+Docker Desktop running, VS Code with the *Dev Containers* extension. Clone the repo, open the folder in VS Code, accept **Reopen in Container**. The container installs `uv`, Claude Code, and the Codex and Copilot CLIs. Then `uv run check.py` in the VS Code terminal.
 
 ### The check
 
