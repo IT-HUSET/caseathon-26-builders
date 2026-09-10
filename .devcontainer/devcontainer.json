@@ -1,0 +1,21 @@
+{
+  "name": "Caseathon 2026 Builders (Python + Claude Code)",
+  "image": "mcr.microsoft.com/devcontainers/python:3.13",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": { "installZsh": true, "configureZshAsDefaultShell": true, "username": "vscode" },
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/node:1": { "version": "lts" },
+    "ghcr.io/va-h/devcontainers-features/uv:1": { "shellAutocompletion": true }
+  },
+  "portsAttributes": { "8000": { "label": "Quick Notes", "onAutoForward": "notify" } },
+  "customizations": {
+    "vscode": {
+      "extensions": ["anthropic.claude-code", "ms-python.python"],
+      "settings": { "workbench.startupEditor": "readme" }
+    }
+  },
+  "remoteUser": "vscode",
+  "containerEnv": { "CLAUDE_CONFIG_DIR": "/home/vscode/.claude", "LANG": "en_US.UTF-8", "LC_ALL": "en_US.UTF-8" },
+  "postCreateCommand": "bash .devcontainer/setup.sh"
+}

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quick Notes</title>
+  <style>
+    body { font: 16px/1.5 system-ui, sans-serif; max-width: 40rem; margin: 2rem auto; padding: 0 1rem; color: #222; }
+    h1 { font-size: 1.5rem; }
+    form { display: grid; gap: .5rem; margin-bottom: 2rem; }
+    input, textarea, button { font: inherit; padding: .5rem; }
+    button { width: max-content; cursor: pointer; }
+    ul { list-style: none; padding: 0; }
+    li { border-top: 1px solid #ddd; padding: .75rem 0; }
+    li h2 { font-size: 1rem; margin: 0 0 .25rem; }
+    li p { margin: 0; white-space: pre-wrap; }
+    time { color: #777; font-size: .85rem; }
+    .empty { color: #777; }
+  </style>
+</head>
+<body>
+  <h1>Quick Notes</h1>
+
+  <form method="post" action="/notes">
+    <input name="title" placeholder="Title" required maxlength="120" autofocus>
+    <textarea name="body" placeholder="Body (optional)" rows="3"></textarea>
+    <button type="submit">Add note</button>
+  </form>
+
+  <ul id="notes">
+    {% for note in notes %}
+    <li>
+      <h2>{{ note.title }}</h2>
+      {% if note.body %}<p>{{ note.body }}</p>{% endif %}
+      <time datetime="{{ note.created_at }}">{{ note.created_at }}</time>
+    </li>
+    {% else %}
+    <li class="empty">No notes yet.</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>

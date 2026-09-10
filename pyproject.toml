@@ -1,0 +1,18 @@
+[project]
+name = "quick-notes"
+version = "0.1.0"
+description = "Caseathon 2026 Builders warm-up: a one-file notes app to practise plan-then-build"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.32.0",
+    "jinja2>=3.1.0",
+    "python-multipart>=0.0.9",
+    # Test deps live here on purpose: `uv sync` and the sensors work immediately
+    "pytest>=8.0.0",
+    "httpx2>=0.1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
