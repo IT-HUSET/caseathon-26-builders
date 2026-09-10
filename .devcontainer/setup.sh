@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
+# Claude Code is installed at image build time by the claude-code dev container feature
 set -e
-echo "Installing Claude Code..."
-curl -fsSL https://claude.ai/install.sh | bash || npm install -g @anthropic-ai/claude-code
-export PATH="$HOME/.local/bin:$PATH"
+echo "Claude Code: $(claude --version 2>/dev/null || echo 'not found (check devcontainer.json features)')"
 echo "Installing dependencies..."
 uv sync
-echo "Done. Run ./check.sh, then 'claude'."
+echo "Done. Run 'uv run check.py', then 'claude'."
