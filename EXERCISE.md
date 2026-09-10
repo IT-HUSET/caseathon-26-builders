@@ -8,7 +8,7 @@ Builders warm-up for the Caseathon. Ninety minutes, three hands-on blocks betwee
 - How to hand the agent one increment at a time and check it with something executable.
 - What a review in fresh context finds that you did not.
 
-**What you need**: `./check.sh` green, `claude` started in this directory, `/model opus` set. Work in pairs, one laptop each.
+**What you need**: `./check.sh` green, `claude` started in this directory, `/model opus` set. Work alone; pairing is fine if you prefer, one laptop per pair.
 
 The playbook chapters behind each block are listed at the end. The five habits on the Caseathon page are the same five you drill here.
 
@@ -62,7 +62,7 @@ Goal: rows 2 and 3 in `PLAN.md` have a scenario and a control that a stranger co
    ```
    Then **Ctrl+D**.
 
-Checkpoint: could your neighbour build row 2 from `PLAN.md` alone, without asking you anything? If not, fix the row, not the neighbour.
+Checkpoint: could someone who was not in this session build row 2 from `PLAN.md` alone, without asking you anything? If not, fix the row.
 
 ---
 
@@ -104,7 +104,7 @@ Checkpoint: `git log --oneline` shows two commits. `docs/FRICTION.md` has at lea
 
 ## Block C · Review, then hand over (12 min)
 
-Goal: a fresh pair of eyes finds one thing, and someone who was not there builds row 3.
+Goal: a fresh session finds one thing you missed, and row 3 gets built from the repo alone.
 
 1. Review in a fresh session. New `claude`, then:
 
@@ -116,9 +116,11 @@ Goal: a fresh pair of eyes finds one thing, and someone who was not there builds
 
    Write the findings into `docs/FRICTION.md` under *Review findings*. Fix the most important one if it takes under five minutes; otherwise note it. **Ctrl+D**.
 
-2. Hand over. Swap laptops with your neighbour. You now build **their** row 3 on **their** repo, from the repo alone: no questions, no explanations. Fresh session, same prompt shape as block B with row 3 pasted in. Run the control. Every question you wanted to ask is one friction line on their log.
+2. Hand over to a stranger. Build row 3 in a fresh session, same prompt shape as block B with row 3 pasted in, but with one rule: the only thing you may type is the row. No explaining, no correcting from memory of blocks A and B. If the agent needs something that is not in `PLAN.md`, `AGENTS.md` or `docs/`, that is a friction line, and you add the missing sentence to the file before re-sending. Run the control.
 
-   This is the afternoon's 13:10 in miniature: at the Caseathon the person building increment two was not in the room for the skeleton.
+   This is the afternoon's 13:10 in miniature: at the Caseathon the person building increment two was not in the room for the skeleton, and gets only what is in the repo. Here the stranger is the fresh session.
+
+   *Working in a pair?* Swap laptops instead and build each other's row 3 from the repo alone, no questions allowed. Same rule, real stranger.
 
 Checkpoint: row 3 `done` or `building` with a friction line saying why.
 
