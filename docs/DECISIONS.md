@@ -12,4 +12,4 @@ A warm-up with 90 minutes of hands-on time cannot afford a package layout. `app.
 
 ## D3 · Plain HTML forms, full page render
 
-Every action is a form POST followed by a redirect to `/`. No JavaScript framework, no HTMX in this repo. Cost: a full page reload per action, which is fine for a notes list and keeps every control checkable with a single `GET /`.
+Writes are a form POST followed by a redirect to `/`. Reads that take input, such as search or a filter, are a GET with query parameters, so the resulting URL can be reloaded and shared. No JavaScript framework, no HTMX in this repo. Cost: a full page reload per action, which is fine for a notes list and keeps every control checkable with a single `GET`.
