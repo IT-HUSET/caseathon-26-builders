@@ -1,6 +1,14 @@
-# Decisions
+# Architecture and decisions
 
-Each decision is one paragraph: the situation, what we chose, what it costs.
+The sketch on top, the decisions under it. Each decision is one paragraph: the situation, what we chose, what it costs.
+
+## Sketch
+
+```
+browser ──GET /, POST /notes──▶ app.py (FastAPI, one module) ──sqlite3──▶ notes.db (path from NOTES_DB)
+                                     │
+                                     └── templates/index.html (the one page, inline CSS, no JS)
+```
 
 ## D1 · One file, no framework layers
 

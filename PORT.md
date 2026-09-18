@@ -2,7 +2,7 @@
 
 The exercise is stack-independent. If you would rather run it in the stack you will use for the Caseathon prototype, port the app first, then do [EXERCISE.md](EXERCISE.md) on the ported repo. The port is the same loop as one plan row: one prompt, one control you run yourself, one commit.
 
-**Only if**: Option A (your own machine), and the toolchain already runs a hello-world web app there before the session. Codespaces and the dev container have Python only. Pick a mainstream stack with an embedded SQLite driver and an in-process HTTP test client; if you have to think about which, stay in Python.
+**Only if**: Option A (your own machine), and the toolchain already runs a hello-world web app there before the session. Codespaces and the dev container are set up for Python only. Pick a mainstream stack with an embedded SQLite driver and an in-process HTTP test client; if you have to think about which, stay in Python.
 
 **Time box**: agree one with the room before you start. Not green when it ends: `git switch main`, one friction line, continue in Python. Nothing is lost, the port is on its own branch.
 
@@ -17,7 +17,7 @@ claude
 
 ```
 Port this app to <stack>, keeping everything that is not code the same.
-Read AGENTS.md, docs/PRD.md, docs/DECISIONS.md, PLAN.md, app.py,
+Read AGENTS.md, docs/prd.md, docs/adr.md, docs/plan.md, app.py,
 templates/index.html and tests/test_notes.py first.
 
 Keep: the routes (GET /, POST /notes answering 303 to /), the page markup
@@ -29,14 +29,14 @@ the port: use the smallest set your stack needs for a web server,
 templates and tests, and commit the lockfile.
 
 Then update every file that names the stack: AGENTS.md (run and test
-commands, the one-module rule, the schema-change rule), PLAN.md row 1
-control (new test path), docs/DECISIONS.md D1 and D2 (same decisions,
-this stack's equivalents), the Commands section of README.md, and the
+commands, the one-module rule, the schema-change rule), docs/plan.md row 1
+control (new test path), the sketch and D1 and D2 in docs/adr.md (same
+decisions, this stack's equivalents), the Commands section, setup step 4 and the Files table of README.md, and the
 deny list in .claude/settings.json (replace the uv and pip lines with
 this stack's package-add commands). Delete app.py, tests/, pyproject.toml,
 uv.lock and check.py.
 
-Do not change docs/PRD.md, D3, or the scenario text in PLAN.md. Stop when
+Do not change docs/prd.md, D3, or the scenario text in docs/plan.md. Stop when
 the ported tests pass and report the files changed and the test output.
 ```
 
@@ -50,7 +50,7 @@ The tests do not count on their own here. In row 1 the tests were written before
 
 ## 3. Read the guardrails you now have
 
-Open `AGENTS.md`, `docs/DECISIONS.md` and `.claude/settings.json` and read them as the stranger in block C will: every rule the agent will follow for the rest of the exercise is in these three files. Anything still saying Python, `uv` or `app.py` gets fixed now, by you or by one more prompt.
+Open `AGENTS.md`, `docs/adr.md` and `.claude/settings.json` and read them as the stranger in block C will: every rule the agent will follow for the rest of the exercise is in these three files. Anything still saying Python, `uv` or `app.py` gets fixed now, by you or by one more prompt.
 
 ## 4. Commit
 

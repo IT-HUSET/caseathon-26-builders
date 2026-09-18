@@ -6,7 +6,7 @@ from fastapi.testclient import TestClient
 
 @pytest.fixture
 def client(tmp_path, monkeypatch):
-    """Fresh SQLite file per test; the app reads NOTES_DB at startup."""
+    """Fresh SQLite file per test; the app reads NOTES_DB on every connection."""
     monkeypatch.setenv("NOTES_DB", str(tmp_path / "test.db"))
     from app import app
 
